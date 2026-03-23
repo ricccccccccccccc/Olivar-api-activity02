@@ -1,24 +1,2 @@
-Authentication vs Authorization  
-
-Answer: Authentication is the process of confirming a user's identity, usually during login.
-In our code, authentication occurs when the user enters their email and password.
-The system checks if these match the stored data in the database. If the credentials are correct, 
-the system verifies the user's legitimacy. Authorization, on the other hand, 
-determines what actions or resources the authenticated user can access. Once a user is authenticated,
-authorization checks if they have permission to perform certain actions,
-like accessing protected routes, viewing specific data, or carrying out administrative tasks.  
-
-Security (bcrypt) 
-
- Answer: We used bcryptjs to hash passwords before saving them in MongoDB to improve system security.
-If we stored passwords as plain text, anyone who accessed the database could easily read all user passwords. 
-Bcrypt converts the password into a secure hashed value that is hard to reverse back to the original password. 
-During login, the system compares the entered password with the hashed password stored in the database. 
-This method protects user data and lowers the risk of password theft in case of a database breach. JWT Structure 
-
-Answer: The protect middleware verifies the JSON Web Token (JWT) sent by the client when accessing protected routes. 
-When a request is made, the middleware checks the Authorization header for a valid token. 
-If it finds a token, it verifies it using the server's secret key. I
-f the token is valid, the middleware extracts the user information stored inside it and attaches it to the request object. 
-This allows the system to identify the authenticated user and grant access to protected resources.
-If the token is missing or invalid, the middleware denies access and returns an unauthorized error. 
+node_modules/
+.env
